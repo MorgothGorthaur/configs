@@ -1,0 +1,5 @@
+user = postfix
+password = password123
+hosts = localhost
+dbname = postfix
+query = SELECT domain FROM domain WHERE domain='%u'
