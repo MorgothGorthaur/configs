@@ -53,19 +53,19 @@ chown vmail:vmail /home/mail
 cp ~/main.cf /etc/postfix/main.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT goto FROM alias WHERE address='%s' AND active = '1' " >> /etc/postfix/mysql_virtual_alias_maps.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT domain FROM domain WHERE domain='%u' " >> /etc/postfix/mysql_virtual_domains_maps.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT CONCAT(domain,'/',maildir) FROM mailbox WHERE username='%s' AND active = '1' " >>  /etc/postfix/mysql_virtual_mailbox_maps.cf
@@ -117,7 +117,7 @@ echo " lda_mailbox_autocreate = yes " >>  /etc/dovecot/conf.d/15-lda.conf
 
 echo " 
 driver = mysql
-connect = host=localhost dbname=postfix user=postfix password=$mysql_password " >> /etc/dovecot/dovecot-sql.conf.ext
+connect = host=localhost dbname=postfix user=postfix password=$mysql_passwd " >> /etc/dovecot/dovecot-sql.conf.ext
 echo "
 default_pass_scheme = MD5-CRYPT
 password_query = SELECT password FROM mailbox WHERE username = '%u'  " >> /etc/dovecot/dovecot-sql.conf.ext
