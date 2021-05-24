@@ -280,7 +280,7 @@ unknown_local_recipient_reject_code = 550
 # of listing the patterns here. Specify type:table for table-based lookups
 # (the value on the table right-hand side is not used).
 #
-mynetworks =127.0.0.0/8
+mynetworks =  127.0.0.0/8
 #mynetworks = $config_directory/mynetworks
 #mynetworks = hash:/etc/postfix/network_table
 
@@ -642,7 +642,7 @@ debugger_command =
 #
 # debugger_command =
 #	PATH=/bin:/usr/bin:/usr/local/bin; export PATH; (echo cont;
-#}}}}}}}}}}}}}}}	echo where) | gdb $daemon_directory/$process_name $process_id 2>&1
+#	echo where) | gdb $daemon_directory/$process_name $process_id 2>&1
 #	>$config_directory/$process_name.$process_id.log & sleep 5
 #
 # Another possibility is to run gdb under a detached screen session.
@@ -706,14 +706,13 @@ readme_directory = /usr/share/doc/postfix/README_FILES
 # in PEM format. Intermediate certificates should be included in general,
 # the server certificate first, then the issuing CA(s) (bottom-up order).
 #
-#smtpd_tls_cert_file = /etc/pki/tls/certs/postfix.pem
 smtpd_tls_cert_file = /etc/ssl/mail/public.pem
 # The full pathname of a file with the Postfix SMTP server RSA private key
 # in PEM format. The private key must be accessible without a pass-phrase,
 # i.e. it must not be encrypted.
 #
-#smtpd_tls_key_file = /etc/pki/tls/private/postfix.key
-smtpd_tls_key_file = /etc/ssl/mail/private.key
+smtpd_tls_key_file = /etc/ssl/mail/private.key 
+
 # Announce STARTTLS support to remote SMTP clients, but do not require that
 # clients use TLS encryption (opportunistic TLS inbound).
 #

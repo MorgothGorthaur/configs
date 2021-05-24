@@ -13,7 +13,7 @@ dnf install epel-release -y
 dnf install http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 dnf module install php:remi-7.2 -y
 dnf install php-fpm -y
-#cp ~/nginx.conf /ext/nginx/nginx.conf
+cp ~/nginx.conf /ext/nginx/nginx.conf
 dnf install mariadb-server -y
 systemctl enable mariadb --now
 echo "mysql_passwd="
@@ -42,7 +42,7 @@ mkdir /usr/share/nginx/html/postfixadmin
 tar -C /usr/share/nginx/html/postfixadmin -xvf postfixadmin.tar.gz --strip-components=1
 mkdir /usr/share/nginx/html/postfixadmin/templates_c
 chown -R apache:apache /usr/share/nginx/html/postfixadmin
-#cp ~/config.local.php /usr/share/nginx/html/postfixadmin/config.local.php
+cp ~/config.local.php /usr/share/nginx/html/postfixadmin/config.local.php
 systemctl enable php-fpm --now
 systemctl enable nginx --now
 
