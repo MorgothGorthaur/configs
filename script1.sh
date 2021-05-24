@@ -13,7 +13,7 @@ dnf install epel-release -y
 dnf install http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 dnf module install php:remi-7.2 -y
 dnf install php-fpm -y
-cp ~/nginx.conf /ext/nginx/nginx.conf
+cp ~/nginx.conf /etc/nginx/nginx.conf
 dnf install mariadb-server -y
 systemctl enable mariadb --now
 echo "mysql_passwd="
