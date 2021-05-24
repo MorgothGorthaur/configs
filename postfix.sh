@@ -22,7 +22,7 @@ query = SELECT domain FROM domain WHERE domain='%u' " >> /etc/postfix/mysql_virt
 
 echo "
 user = postfix
-password = postfix123
+password = $mysql_password
 hosts = localhost
 dbname = postfix
 query = SELECT CONCAT(domain,'/',maildir) FROM mailbox WHERE username='%s' AND active = '1' " >>  /etc/postfix/mysql_virtual_mailbox_maps.cf
