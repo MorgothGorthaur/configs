@@ -29,7 +29,7 @@ n
 n
 n
 EOF
-echo "input mysql your password "
+echo "input your  password(sql) "
 mysql -p -r <<EOF
 alter user 'root'@'localhost' identified by '$mysql_passwd';
 create database postfix;
