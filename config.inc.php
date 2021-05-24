@@ -26,7 +26,7 @@ $config = array();
 // NOTE: for SQLite use absolute path (Linux): 'sqlite:////full/path/to/sqlite.db?mode=0646'
 //       or (Windows): 'sqlite:///C:/full/path/to/sqlite.db'
 $config['db_dsnw'] = 'mysql://roundcube:roundcube123@localhost/roundcubemail';
-$config['enable_installer'] = false;
+$config['enable_installer'] = true;
 // The mail host chosen to perform the log-in.
 // Leave blank to show a textbox at login, give a list of hosts
 // to display a pulldown menu or set one host as string.
