@@ -87,9 +87,7 @@ dovecot   unix  -  n  n  -  -  pipe
 mkdir -p /etc/ssl/mail
 openssl req -new -x509 -days 1461 -nodes -out /etc/ssl/mail/public.pem -keyout /etc/ssl/mail/private.key -subj "/C=UA/ST=SPb/L=SPb/O=Global Security/OU=IT Department/CN=tarasov.lnu.ua"
 systemctl enable postfix --now
-create database postfix;
-grant all privileges on postfix.* to 'postfix'@'localhost' identified by '$mysql_passwd';
-EOF
+
 dnf install php-mysqli php-mbstring php-imap -y
 dnf install tar -y
 wget https://sourceforge.net/projects/postfixadmin/files/latest/download -O postfixadmin.tar.gz
