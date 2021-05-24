@@ -1,3 +1,4 @@
+read mysql_password
 groupadd -g 1024 vmail
 useradd -d /home/mail -g 1024 -u 1024 vmail -m
 chown vmail:vmail /home/mail
@@ -5,7 +6,7 @@ mkdir -p /etc/ssl/mail
 openssl req -new -x509 -days 1461 -nodes -out /etc/ssl/mail/public.pem -keyout /etc/ssl/mail/private.key -subj "/C=UA/ST=SPb/L=SPb/O=Global Security/OU=IT Department/CN=tarasov.lnu.ua"
 
 
-cp ~/config/main.cf /etc/postfix/main.cf
+cp ~/config/files/main.cf /etc/postfix/main.cf
 echo "
 user = postfix
 password = $mysql_password

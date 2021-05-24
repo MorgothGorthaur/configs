@@ -15,6 +15,7 @@ systemctl enable nginx --now
 echo "mysql_passwd="
 read mysql_passwd
 mysql_secure_installation <<EOF
+
 y
 $mysql_passwd
 $mysql_passwd

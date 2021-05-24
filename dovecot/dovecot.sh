@@ -2,10 +2,10 @@
 
 echo "mail_location = maildir:/home/mail/%d/%u/ " >> /etc/dovecot/conf.d/10-mail.conf
 echo " lda_mailbox_autocreate = yes " >>  /etc/dovecot/conf.d/15-lda.conf
-cp ~/config/dovecot/files/10-master.conf /etc/dovecot/conf.d/10-master.conf
-cp ~/config/dovecot/files/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
-cp ~/config/dovecot/files/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
-cp ~/config/dovecot/files/dovecot.conf /etc/dovecot/dovecot.conf
+cp ~/configs/dovecot/files/10-master.conf /etc/dovecot/conf.d/10-master.conf
+cp ~/configs/dovecot/files/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
+cp ~/configs/dovecot/files/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
+cp ~/configs/dovecot/files/dovecot.conf /etc/dovecot/dovecot.conf
 echo " lda_mailbox_autocreate = yes " >>  /etc/dovecot/conf.d/15-lda.conf
 echo '
 driver = mysql
