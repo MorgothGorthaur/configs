@@ -1,6 +1,6 @@
 #!/bin/sh
 dnf install dovecot dovecot-mysql
-
+read mysql_password
 echo "
 mail_location = maildir:/home/mail/%d/%u/ " >> /etc/dovecot/conf.d/10-mail.conf
 
