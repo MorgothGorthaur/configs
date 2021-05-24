@@ -1,20 +1,20 @@
 #!/bin/sh
-dnf install chrony wget -y
+dnf install chrony wget -y >> a.txt
 systemctl enable chronyd --now
-dnf update -y
+dnf update -y >> a.txt
 firewall-cmd --permanent --add-port=25/tcp --add-port=80/tcp --add-port=110/tcp --add-port=143/tcp --add-port=443/tcp --add-port=465/tcp --add-port=587/tcp --add-port=993/tcp --add-port=995/tcp
 firewall-cmd --reload
 setenforce 0
 sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
-dnf install nginx -y
+dnf install nginx -y >> a.txt
 
 
-dnf install epel-release -y
-dnf install http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
-dnf module install php:remi-7.2 -y
-dnf install php-fpm -y
+dnf install epel-release -y >> a.txt
+dnf install http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y >> a.txt
+dnf module install php:remi-7.2 -y >> a.txt
+dnf install php-fpm -y >> a.txt
 cp ~/nginx.conf /etc/nginx/nginx.conf
-dnf install mariadb-server -y
+dnf install mariadb-server -y >> a.txt
 systemctl enable mariadb --now
 echo "mysql_passwd="
 read mysql_passwd
@@ -35,8 +35,8 @@ alter user 'root'@'localhost' identified by '$mysql_passwd';
 create database postfix;
 grant all privileges on postfix.* to 'postfix'@'localhost' identified by '$mysql_passwd';
 EOF
-dnf install php-mysqli php-mbstring php-imap -y
-dnf install tar -y
+dnf install php-mysqli php-mbstring php-imap -y >> a.txt
+dnf install tar -y >> a.txt
 wget https://sourceforge.net/projects/postfixadmin/files/latest/download -O postfixadmin.tar.gz
 mkdir /usr/share/nginx/html/postfixadmin
 tar -C /usr/share/nginx/html/postfixadmin -xvf postfixadmin.tar.gz --strip-components=1
@@ -46,7 +46,7 @@ cp ~/config.local.php /usr/share/nginx/html/postfixadmin/config.local.php
 systemctl enable php-fpm --now
 systemctl enable nginx --now
 
-dnf install postfix postfix-mysql -y
+dnf install postfix postfix-mysql -y >> a.txt
 groupadd -g 1024 vmail
 useradd -d /home/mail -g 1024 -u 1024 vmail -m
 chown vmail:vmail /home/mail
@@ -102,7 +102,7 @@ systemctl enable php-fpm --now
 systemctl enable nginx --now
 
 
-dnf install dovecot dovecot-mysql
+dnf install dovecot dovecot-mysql -y >> a.txt
 
 echo "
 mail_location = maildir:/home/mail/%d/%u/ " >> /etc/dovecot/conf.d/10-mail.conf
