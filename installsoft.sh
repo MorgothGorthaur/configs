@@ -14,5 +14,5 @@ dnf install php-mysqli php-mbstring php-imap -y >> a.txt
 dnf install tar -y >>a.txt
 dnf install dovecot dovecot-mysql -y >> a.txt
 dnf install php-pear php-mcrypt php-intl php-ldap php-pear-Net-SMTP
-wget wget https://sourceforge.net/projects/postfixadmin/files/latest/download -O ~/tmp/postfixadmin.tar.gz ~/tmp
-wget https://github.com/roundcube/roundcubemail/releases/download/1.2.11/roundcubemail-1.2.11-complete.tar.gz ~/tmp
+wget https://sourceforge.net/projects/postfixadmin/files/latest/download -O ~/tmp/postfixadmin.tar.gz 
+wget https://github.com/roundcube/roundcubemail/releases/download/1.2.11/roundcubemail-1.2.11-complete.tar.gz -O ~/tmp/roundcubemail-1.2.11-complete.tar.gz
