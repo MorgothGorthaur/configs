@@ -1,7 +1,7 @@
 #!/bin/sh
 read mysql_passwd
 mkdir /usr/share/nginx/html/webmail
-tar -C /usr/share/nginx/html/webmail -xvf ~/tmp/roundcubemail-1.2.11-complete.tar.gz --strip-components=1
+tar -C /usr/share/nginx/html/webmail -xvf ~/tmp/roundcubemail.tar.gz --strip-components=1
 cp /usr/share/nginx/html/webmail/config/config.inc.php.sample /usr/share/nginx/html/webmail/config/config.inc.php
 
 cp ~/configs/webmail/files/config.inc.php /usr/share/nginx/html/webmail/config/config.inc.php
