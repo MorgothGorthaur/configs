@@ -30,12 +30,10 @@ create database postfix;
 grant all privileges on postfix.* to 'postfix'@'localhost' identified by '$mysql_passwd';
 EOF
 
-echo "
-<?php
+echo "<?php"  > /usr/share/nginx/html/postfixadmin/config.local.php
+echo '$CONF' "['configured'] = true;"  >> /usr/share/nginx/html/postfixadmin/config.local.php
+echo '$CONF'"['default_language'] = 'ru';" >> /usr/share/nginx/html/postfixadmin/config.local.php
+echo '$CONF'"['database_password'] = '$mysql_passwd';" >> /usr/share/nginx/html/postfixadmin/config.local.php
+echo '$CONF'"['emailcheck_resolve_domain']='NO';
 
-$CONF['configured'] = true;
-$CONF['default_language'] = 'ru';
-$CONF['database_password'] = '$mysql_passwd';
-$CONF['emailcheck_resolve_domain']='NO';
-
-?> " > /usr/share/nginx/html/postfixadmin/config.local.php
+?> ">> /usr/share/nginx/html/postfixadmin/config.local.php
