@@ -1,5 +1,5 @@
 #!/bin/sh
-
+read mysql_password
 echo "mail_location = maildir:/home/mail/%d/%u/ " >> /etc/dovecot/conf.d/10-mail.conf
 echo " lda_mailbox_autocreate = yes " >>  /etc/dovecot/conf.d/15-lda.conf
 cp ~/configs/dovecot/files/10-master.conf /etc/dovecot/conf.d/10-master.conf
