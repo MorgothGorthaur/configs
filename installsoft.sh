@@ -1,4 +1,7 @@
 #!/bin/bash
+dnf install epel-release  http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y;
+dnf update -y;
+dnf install  chrony wget  nginx  php:remi-7.2 php-fpm mariadb-server php-mysqli php-mbstring php-imap postfix postfix-mysql  php-mysqli php-mbstring php-imap tar dovecot dovecot-mysql  php-pear php-mcrypt php-intl php-ldap php-pear-Net-SMTP -y; 
 #dnf install chrony wget -y ;
 #dnf update -y ;
 #dnf install nginx -y ;
