@@ -24,7 +24,7 @@ n
 n
 n
 EOF
-mysql -p -r <<EOF
+mysql -p$mysql_passwd -r <<EOF
 alter user 'root'@'localhost' identified by '$mysql_passwd';
 create database postfix;
 grant all privileges on postfix.* to 'postfix'@'localhost' identified by '$mysql_passwd';
@@ -35,7 +35,7 @@ echo "
 
 $CONF['configured'] = true;
 $CONF['default_language'] = 'ru';
-$CONF['database_password'] = '$mysql_passwds';
+$CONF['database_password'] = '$mysql_passwd';
 $CONF['emailcheck_resolve_domain']='NO';
 
 ?> " > /usr/share/nginx/html/postfixadmin/config.local.php
