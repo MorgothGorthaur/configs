@@ -1,4 +1,3 @@
-#!/bin/bash
 dnf install epel-release  http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y;
 dnf update -y;
 dnf module install php:remi-7.2 -y;

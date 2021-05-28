@@ -1,4 +1,3 @@
-#!/bin/sh
 cp ~/configs/postfixadmin/files/nginx.conf /etc/nginx/nginx.conf
 
 
@@ -12,8 +11,6 @@ chown -R apache:apache /usr/share/nginx/html/postfixadmin
 systemctl enable mariadb --now
 systemctl enable php-fpm --now
 systemctl enable nginx --now
-echo "mysql_passwd="
-read mysql_passwd
 mysql_secure_installation <<EOF
 
 y

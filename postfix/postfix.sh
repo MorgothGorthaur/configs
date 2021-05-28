@@ -1,4 +1,3 @@
-read mysql_password
 groupadd -g 1024 vmail
 useradd -d /home/mail -g 1024 -u 1024 vmail -m
 chown vmail:vmail /home/mail
@@ -9,19 +8,19 @@ openssl req -new -x509 -days 1461 -nodes -out /etc/ssl/mail/public.pem -keyout /
 cp ~/configs/postfix/files/main.cf /etc/postfix/main.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT goto FROM alias WHERE address='%s' AND active = '1' " >> /etc/postfix/mysql_virtual_alias_maps.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT domain FROM domain WHERE domain='%u' " >> /etc/postfix/mysql_virtual_domains_maps.cf
 echo "
 user = postfix
-password = $mysql_password
+password = $mysql_passwd
 hosts = localhost
 dbname = postfix
 query = SELECT CONCAT(domain,'/',maildir) FROM mailbox WHERE username='%s' AND active = '1' " >>  /etc/postfix/mysql_virtual_mailbox_maps.cf
