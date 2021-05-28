@@ -29,7 +29,7 @@ EOF
 
 echo "<?php"  > /usr/share/nginx/html/postfixadmin/config.local.php
 echo '$CONF' "['configured'] = true;"  >> /usr/share/nginx/html/postfixadmin/config.local.php
-echo '$CONF'"['default_language'] = 'ru';" >> /usr/share/nginx/html/postfixadmin/config.local.php
+echo '$CONF'"['default_language'] = 'ua';" >> /usr/share/nginx/html/postfixadmin/config.local.php
 echo '$CONF'"['database_password'] = '$mysql_passwd';" >> /usr/share/nginx/html/postfixadmin/config.local.php
 echo '$CONF'"['emailcheck_resolve_domain']='NO';
 
