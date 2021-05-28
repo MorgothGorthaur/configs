@@ -8,7 +8,8 @@
 read mysql_passwd
 cd ~/root
 . ./configs/installsoft.sh
-. ./configs/firewallselinuxconfig.sh
+. ./configs/firewallconf.sh
+. ./configs/selinuxconf.sh
 . ./configs/postfixadmin/postfixadmin.sh
 . ./configs/postfix/postfix.sh
 . ./configs/dovecot/dovecot.sh

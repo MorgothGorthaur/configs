@@ -5,7 +5,6 @@ cp ~/configs/dovecot/files/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 cp ~/configs/dovecot/files/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
 cp ~/configs/dovecot/files/dovecot.conf /etc/dovecot/dovecot.conf
 #echo " lda_mailbox_autocreate = yes " >>  /etc/dovecot/conf.d/15-lda.conf
-read mysql_password
 echo "driver = mysql
 connect = host=localhost dbname=postfix user=postfix password=$mysql_passwd
 default_pass_scheme = MD5-CRYPT
